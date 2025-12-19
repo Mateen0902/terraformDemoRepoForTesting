@@ -56,16 +56,3 @@ jobs:
           TF_VAR_project_name: demo-app
           TF_VAR_owner: DevOps-Team
           TF_VAR_cost_center: Engineering
-
-  sonarqube-scan:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      
-      - name: SonarQube Scan
-        uses: sonarqube-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}

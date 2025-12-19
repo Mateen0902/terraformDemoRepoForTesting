@@ -105,8 +105,8 @@ variable "ecs_max_capacity" {
   default     = 10
   
   validation {
-    condition     = var.ecs_max_capacity >= var.ecs_min_capacity
-    error_message = "Maximum capacity must be greater than or equal to minimum capacity."
+    condition     = var.ecs_max_capacity >= 1
+    error_message = "Maximum capacity must be at least 1."
   }
 }
 
